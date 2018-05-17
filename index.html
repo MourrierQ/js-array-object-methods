@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        //                        Array Methods
+        // ==========================================================
+        // ==========================================================
+        // ==========================================================
+        // ==========================================================
+
+        //.Filter()
+        const filt = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+        const filtered = filt.filter(e => e % 2 == 0);
+        console.log("[Filter()] : " + filtered);
+
+        //.Map()
+        const toMap = [1, 2, 3, 4]
+        const mapped = toMap.map(e => "Elem " + e);
+        console.log("[Map()] : " + mapped)
+
+        //.Reduce() Used to generate totals, subtotals
+        const s = "Hello Hello World"
+        const toReduce = s.split(" ");
+        const reduced = toReduce.reduce((accumulator, currentValue) => {
+            if (currentValue === "Hello") {
+                accumulator[currentValue]++;
+            }
+            return accumulator;
+        }, { "Hello": 0 })
+        console.log("[Reduce()] : " + reduced["Hello"]);
+
+        //ForEach()
+        const toForEach = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+        toForEach.forEach(e => {
+            console.log("[forEach()] : " + e)
+        })
+
+        //Some() Will return True if at least one item verify the condition
+        // The loop will be exited as soon as it encounters True
+        const toSome = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+        const some = toSome.some(e => e % 2 === 10)
+        console.log("[Some()] : " + some)
+
+        //Every()
+        const toEvery = [2, 2, 2, 2, 2, 2, 2, 3]
+        const every = toEvery.every(e => e === 2);
+        console.log("[Every()] : " + every)
+
+        //Includes()
+        const toInclude = [1, 2, "3", 4, 5, 6, 7, 8, 9];
+        const include = toInclude.includes(3)
+        console.log("[Include()] : " + include);
+
+        //Array.from()
+        const toFrom = [, , , ,]
+        const from = Array.from(toFrom, x => x = 5);
+        console.log("[Array.from()] : " + from);
+
+        //               Object Methods
+        //====================================================
+        //====================================================
+        //====================================================
+        //====================================================
+
+        //Object.values()
+        const toValues = {
+            1: 1,
+            2: 5,
+            3: 7,
+            4: 9,
+            5: 100
+        }
+
+        const values = Object.values(toValues);
+        console.log("[Object.values] : " + values)
+
+        //Object.keys()
+        const toKeys = {
+            1: 1,
+            2: 5,
+            3: 7,
+            4: 9,
+            5: 100
+        }
+        const keys = Object.keys(toKeys);
+        console.log("[Object.keys()] : " + keys);
+
+        //Object.entries()
+        const toEntries = {
+            1: 1,
+            2: 5,
+            3: 7,
+            4: 9,
+            5: 100
+        }
+        const entries = Object.entries(toEntries);
+        console.log("[Object.keys() : ]")
+        entries.forEach(e => {
+            console.log(e)
+        })
+
+        //              Spreading
+        //============================================
+        //============================================
+        //============================================
+        //============================================
+
+        //Array Spread : Work in an immutable way  !
+        const arr1 = [1, 2, 3, 4];
+        const arr2 = [5, 6, 7, 8];
+        const arr3 = [9, 10, 11, 12];
+        const spread = [...arr1, ...arr2, ...arr3];
+        console.log("[Array Spread] : " + spread)
+
+
+
+    </script>
+</body>
+
+</html>
